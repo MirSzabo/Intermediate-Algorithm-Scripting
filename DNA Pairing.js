@@ -1,7 +1,6 @@
 //Intermediate Algorithm Scripting: DNA Pairing
 //The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
 //Base pairs are a pair of AT and CG. Match the missing element to the provided character.
-
 function pairElement(str) {
   var paired = [];
   str = str.split("");
@@ -11,16 +10,12 @@ function pairElement(str) {
     } else if (str[i] === "C") {
       paired.push(["C", "G"]);
     } else if (str[i] === "A") {
-      str[i] = "AT";
+      paired.push(["A", "T"]);
     } else if (str[i] === "T") {
-      str[i] = "TA";
+      paired.push(["T", "A"]);
     } 
   }
-  str = str.map(x => [x, pairs[x]]);
-  //str = str.split(" ");
-
-  console.log(str);
- // return str;
+  console.table(paired);
 }
 
 pairElement("GCG");
